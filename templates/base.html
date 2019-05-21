@@ -20,19 +20,13 @@
             $('#btn').on('click', function() {
                 $.get('http://127.0.0.1:5000/getGoodBoi', function(data) {
                     if ($('#content').children().length === 0) {
-                        $('#content').append(renderGoodBoi(data))
+                        $('#content').append(data)
                     } else {
                         $('#content').empty()
-                        $('#content').append(renderGoodBoi(data))
+                        $('#content').append(data)
                     }
                 })
             })
-            function renderGoodBoi(json) {
-                let $template = `<div>`;
-                $template += `<img src=${json.message} alt="good boi"></img>`
-                $template += `</div>`
-                return $template
-            }
         })
     </script>
 </body>
